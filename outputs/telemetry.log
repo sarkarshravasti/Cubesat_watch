@@ -1,0 +1,474 @@
+2026-06-21 11:15:35,958  INFO      main                       ======================================================================
+2026-06-21 11:15:35,958  INFO      main                         🛰️  CubeSat Wildfire Digital Twin — Mission Start
+2026-06-21 11:15:35,958  INFO      main                       ======================================================================
+2026-06-21 11:15:35,961  INFO      orbit_engine               [ORBIT] Loaded satellite: WILDFIRE_WATCH_1
+2026-06-21 11:15:35,961  INFO      agents.health_agent        [HealthMonitoringAgent] Initialized.
+2026-06-21 11:15:35,961  INFO      agents.fault_agent         [FaultDiagnosisAgent] Initialized with 1 default rules.
+2026-06-21 11:15:35,969  INFO      agents.mission_agent       [MissionPlanningAgent] Initialized.
+2026-06-21 11:15:35,969  INFO      agents.anomaly_agent       [AnomalyInvestigationAgent] Initialized.
+2026-06-21 11:15:35,969  INFO      agents.ground_station_agent  [GroundStationAgent] Ground station: CUBESAT-GS-BANGALORE
+2026-06-21 11:15:35,969  INFO      main                       [MAIN] Fetching NASA FIRMS global fire data …
+2026-06-21 11:15:35,969  INFO      firms_api                  [FIRMS] Fetching MODIS_NRT data from: https://firms.modaps.eosdis.nasa.gov/active_fire/modis-c6.1/csv/MODIS_C6_1_Global_24h.csv
+2026-06-21 11:15:38,134  WARNING   firms_api                  [FIRMS] Network error: 404 Client Error: Not Found for url: https://firms.modaps.eosdis.nasa.gov/active_fire/modis-c6.1/csv/MODIS_C6_1_Global_24h.csv — using synthetic fallback.
+2026-06-21 11:15:38,140  INFO      firms_api                  [FIRMS] Synthetic fallback: generated 120 hotspot records.
+2026-06-21 11:15:38,142  INFO      main                       [MAIN] FIRMS: 120 total hotspot records loaded.
+2026-06-21 11:15:38,142  INFO      main                       [MAIN] Starting mission loop (interval=30s). Press Ctrl+C to stop.
+2026-06-21 11:15:38,142  INFO      main                       [MAIN] Dashboard: run  python dashboard.py  in a separate terminal.
+2026-06-21 11:15:38,142  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:15:38,142  INFO      main                         MISSION CYCLE 0001  |  2026-06-21T05:45:38.142899+00:00
+2026-06-21 11:15:38,142  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:15:38,148  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:15:38,149  INFO      ndvi_analysis              [NDVI] Mean=-0.189 | MinNDVI=-0.300 | Risk=Critical | DroughtIdx=0.908
+2026-06-21 11:15:38,149  INFO      main                       [MAIN] NDVI: NDVI=-0.189 | Drought=91% | Risk: Critical | Fires visible: 0
+2026-06-21 11:15:38,149  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:15:38,149  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:15:38,149  INFO      agents.health_agent        [HealthMonitoringAgent] Health=WARNING | Anomalies=3
+2026-06-21 11:15:38,149  INFO      main                       [MAIN] HEALTH: WARNING | 🟡 battery_v: Battery low: 6.976V (warn threshold: 7.2V) | 🟡 temp_C: Thermal elev
+2026-06-21 11:15:38,149  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=True | Primary=ADCS_GYRO_DRIFT
+2026-06-21 11:15:38,149  ERROR     main                       [MAIN] Unhandled exception in mission loop: 'FaultHypothesis' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\sarka\OneDrive\Desktop\Cubesat-summer\main.py", line 277, in main
+    log.warning(f"[MAIN] FAULT: {primary['code']} — {primary['description'][:70]}")
+                                 ~~~~~~~^^^^^^^^
+TypeError: 'FaultHypothesis' object is not subscriptable
+2026-06-21 11:16:08,425  INFO      main                       ======================================================================
+2026-06-21 11:16:08,425  INFO      main                         🛰️  CubeSat Wildfire Digital Twin — Mission Start
+2026-06-21 11:16:08,425  INFO      main                       ======================================================================
+2026-06-21 11:16:08,436  INFO      orbit_engine               [ORBIT] Loaded satellite: WILDFIRE_WATCH_1
+2026-06-21 11:16:08,436  INFO      agents.health_agent        [HealthMonitoringAgent] Initialized.
+2026-06-21 11:16:08,436  INFO      agents.fault_agent         [FaultDiagnosisAgent] Initialized with 1 default rules.
+2026-06-21 11:16:08,438  INFO      agents.mission_agent       [MissionPlanningAgent] Initialized.
+2026-06-21 11:16:08,439  INFO      agents.anomaly_agent       [AnomalyInvestigationAgent] Initialized.
+2026-06-21 11:16:08,439  INFO      agents.ground_station_agent  [GroundStationAgent] Ground station: CUBESAT-GS-BANGALORE
+2026-06-21 11:16:08,439  INFO      main                       [MAIN] Fetching NASA FIRMS global fire data …
+2026-06-21 11:16:08,439  INFO      firms_api                  [FIRMS] Fetching MODIS_NRT data from: https://firms.modaps.eosdis.nasa.gov/active_fire/modis-c6.1/csv/MODIS_C6_1_Global_24h.csv
+2026-06-21 11:16:09,728  WARNING   firms_api                  [FIRMS] Network error: 404 Client Error: Not Found for url: https://firms.modaps.eosdis.nasa.gov/active_fire/modis-c6.1/csv/MODIS_C6_1_Global_24h.csv — using synthetic fallback.
+2026-06-21 11:16:09,740  INFO      firms_api                  [FIRMS] Synthetic fallback: generated 120 hotspot records.
+2026-06-21 11:16:09,743  INFO      main                       [MAIN] FIRMS: 120 total hotspot records loaded.
+2026-06-21 11:16:09,743  INFO      main                       [MAIN] Starting mission loop (interval=30s). Press Ctrl+C to stop.
+2026-06-21 11:16:09,744  INFO      main                       [MAIN] Dashboard: run  python dashboard.py  in a separate terminal.
+2026-06-21 11:16:09,745  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:16:09,745  INFO      main                         MISSION CYCLE 0001  |  2026-06-21T05:46:09.745737+00:00
+2026-06-21 11:16:09,747  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:16:09,755  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:16:09,756  INFO      ndvi_analysis              [NDVI] Mean=-0.160 | MinNDVI=-0.300 | Risk=Critical | DroughtIdx=0.884
+2026-06-21 11:16:09,757  INFO      main                       [MAIN] NDVI: NDVI=-0.160 | Drought=88% | Risk: Critical | Fires visible: 0
+2026-06-21 11:16:09,757  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:16:09,759  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:16:09,759  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:16:09,759  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:16:09,759  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:16:09,763  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Amazon Basin | Feasible=True | Confidence=HIGH | NextPass≈22min
+2026-06-21 11:16:09,763  INFO      main                       [MAIN] MISSION [Amazon Basin]: Feasible=True
+2026-06-21 11:16:09,766  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=30.8° | PeakSNR=24.7dB | Margin=14.7dB | Quality=GOOD
+2026-06-21 11:16:09,766  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=30.8° | PeakSNR=24.7dB | Margin=14.7dB | Qual
+2026-06-21 11:16:10,665  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:16:10,665  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:16:40,667  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:16:40,672  INFO      main                         MISSION CYCLE 0002  |  2026-06-21T05:46:40.672065+00:00
+2026-06-21 11:16:40,672  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:16:40,678  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:16:40,681  INFO      ndvi_analysis              [NDVI] Mean=-0.133 | MinNDVI=-0.300 | Risk=Critical | DroughtIdx=0.861
+2026-06-21 11:16:40,681  INFO      main                       [MAIN] NDVI: NDVI=-0.133 | Drought=86% | Risk: Critical | Fires visible: 0
+2026-06-21 11:16:40,685  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:16:40,685  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:16:40,687  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:16:40,688  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:16:40,689  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:16:40,689  INFO      agents.mission_agent       [MissionPlanningAgent] Target=California NF | Feasible=True | Confidence=HIGH | NextPass≈40min
+2026-06-21 11:16:40,692  INFO      main                       [MAIN] MISSION [California NF]: Feasible=True
+2026-06-21 11:16:40,693  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=24.0° | PeakSNR=23.0dB | Margin=13.0dB | Quality=GOOD
+2026-06-21 11:16:40,693  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=24.0° | PeakSNR=23.0dB | Margin=13.0dB | Qual
+2026-06-21 11:16:41,123  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:16:41,123  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:17:11,126  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:17:11,127  INFO      main                         MISSION CYCLE 0003  |  2026-06-21T05:47:11.127366+00:00
+2026-06-21 11:17:11,127  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:17:11,131  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:17:11,135  INFO      ndvi_analysis              [NDVI] Mean=-0.105 | MinNDVI=-0.291 | Risk=Critical | DroughtIdx=0.837
+2026-06-21 11:17:11,135  INFO      main                       [MAIN] NDVI: NDVI=-0.105 | Drought=84% | Risk: Critical | Fires visible: 0
+2026-06-21 11:17:11,135  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:17:11,139  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:17:11,139  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:17:11,141  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:17:11,141  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=True | Primary=ECLIPSE_NOMINAL
+2026-06-21 11:17:11,142  WARNING   main                       [MAIN] FAULT: ECLIPSE_NOMINAL — Satellite in eclipse — solar current expected near zero.
+2026-06-21 11:17:11,142  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Siberian Taiga | Feasible=True | Confidence=HIGH | NextPass≈36min
+2026-06-21 11:17:11,142  INFO      main                       [MAIN] MISSION [Siberian Taiga]: Feasible=True
+2026-06-21 11:17:11,142  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=62.5° | PeakSNR=28.9dB | Margin=18.9dB | Quality=EXCELLENT
+2026-06-21 11:17:11,142  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=62.5° | PeakSNR=28.9dB | Margin=18.9dB | Qual
+2026-06-21 11:17:11,664  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:17:11,664  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:17:41,665  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:17:41,665  INFO      main                         MISSION CYCLE 0004  |  2026-06-21T05:47:41.665408+00:00
+2026-06-21 11:17:41,669  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:17:41,675  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:17:41,680  INFO      ndvi_analysis              [NDVI] Mean=-0.079 | MinNDVI=-0.246 | Risk=Critical | DroughtIdx=0.816
+2026-06-21 11:17:41,682  INFO      main                       [MAIN] NDVI: NDVI=-0.079 | Drought=82% | Risk: Critical | Fires visible: 0
+2026-06-21 11:17:41,683  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:17:41,685  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:17:41,685  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:17:41,689  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:17:41,689  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:17:41,689  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Chennai | Feasible=True | Confidence=HIGH | NextPass≈22min
+2026-06-21 11:17:41,694  INFO      main                       [MAIN] MISSION [Chennai]: Feasible=True
+2026-06-21 11:17:41,696  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=25.8° | PeakSNR=23.7dB | Margin=13.7dB | Quality=GOOD
+2026-06-21 11:17:41,699  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=25.8° | PeakSNR=23.7dB | Margin=13.7dB | Qual
+2026-06-21 11:17:44,071  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:17:44,073  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:18:14,077  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:18:14,077  INFO      main                         MISSION CYCLE 0005  |  2026-06-21T05:48:14.077084+00:00
+2026-06-21 11:18:14,077  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:18:14,086  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:18:14,089  INFO      ndvi_analysis              [NDVI] Mean=-0.049 | MinNDVI=-0.227 | Risk=Critical | DroughtIdx=0.791
+2026-06-21 11:18:14,092  INFO      main                       [MAIN] NDVI: NDVI=-0.049 | Drought=79% | Risk: Critical | Fires visible: 0
+2026-06-21 11:18:14,093  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:18:14,093  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:18:14,093  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:18:14,096  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:18:14,096  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:18:14,096  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Amazon Basin | Feasible=True | Confidence=HIGH | NextPass≈22min
+2026-06-21 11:18:14,096  INFO      main                       [MAIN] MISSION [Amazon Basin]: Feasible=True
+2026-06-21 11:18:14,098  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=25.7° | PeakSNR=23.6dB | Margin=13.6dB | Quality=GOOD
+2026-06-21 11:18:14,098  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=25.7° | PeakSNR=23.6dB | Margin=13.6dB | Qual
+2026-06-21 11:18:14,976  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:18:14,981  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:18:44,981  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:18:44,984  INFO      main                         MISSION CYCLE 0006  |  2026-06-21T05:48:44.984129+00:00
+2026-06-21 11:18:44,985  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:18:44,996  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:18:45,004  INFO      ndvi_analysis              [NDVI] Mean=-0.021 | MinNDVI=-0.229 | Risk=Critical | DroughtIdx=0.767
+2026-06-21 11:18:45,008  INFO      main                       [MAIN] NDVI: NDVI=-0.021 | Drought=77% | Risk: Critical | Fires visible: 0
+2026-06-21 11:18:45,012  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:18:45,014  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:18:45,018  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:18:45,019  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:18:45,022  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:18:45,023  INFO      agents.mission_agent       [MissionPlanningAgent] Target=California NF | Feasible=True | Confidence=HIGH | NextPass≈40min
+2026-06-21 11:18:45,026  INFO      main                       [MAIN] MISSION [California NF]: Feasible=True
+2026-06-21 11:18:45,026  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=61.0° | PeakSNR=28.8dB | Margin=18.8dB | Quality=EXCELLENT
+2026-06-21 11:18:45,029  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=61.0° | PeakSNR=28.8dB | Margin=18.8dB | Qual
+2026-06-21 11:18:46,591  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:18:46,593  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:19:16,594  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:19:16,595  INFO      main                         MISSION CYCLE 0007  |  2026-06-21T05:49:16.595210+00:00
+2026-06-21 11:19:16,595  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:19:16,597  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:19:16,599  INFO      ndvi_analysis              [NDVI] Mean=0.005 | MinNDVI=-0.170 | Risk=Critical | DroughtIdx=0.746
+2026-06-21 11:19:16,601  INFO      main                       [MAIN] NDVI: NDVI=+0.005 | Drought=75% | Risk: Critical | Fires visible: 0
+2026-06-21 11:19:16,602  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:19:16,603  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:19:16,603  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:19:16,603  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:19:16,604  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:19:16,604  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Siberian Taiga | Feasible=True | Confidence=HIGH | NextPass≈35min
+2026-06-21 11:19:16,604  INFO      main                       [MAIN] MISSION [Siberian Taiga]: Feasible=True
+2026-06-21 11:19:16,605  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=40.5° | PeakSNR=26.2dB | Margin=16.2dB | Quality=EXCELLENT
+2026-06-21 11:19:16,605  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=40.5° | PeakSNR=26.2dB | Margin=16.2dB | Qual
+2026-06-21 11:19:17,184  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:19:17,185  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:19:47,187  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:19:47,188  INFO      main                         MISSION CYCLE 0008  |  2026-06-21T05:49:47.187722+00:00
+2026-06-21 11:19:47,188  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:19:47,188  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:19:47,195  INFO      ndvi_analysis              [NDVI] Mean=0.032 | MinNDVI=-0.125 | Risk=Critical | DroughtIdx=0.723
+2026-06-21 11:19:47,195  INFO      main                       [MAIN] NDVI: NDVI=+0.032 | Drought=72% | Risk: Critical | Fires visible: 0
+2026-06-21 11:19:47,195  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:19:47,195  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:19:47,199  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:19:47,199  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:19:47,199  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=True | Primary=ECLIPSE_NOMINAL
+2026-06-21 11:19:47,199  WARNING   main                       [MAIN] FAULT: ECLIPSE_NOMINAL — Satellite in eclipse — solar current expected near zero.
+2026-06-21 11:19:47,199  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Chennai | Feasible=True | Confidence=HIGH | NextPass≈21min
+2026-06-21 11:19:47,199  INFO      main                       [MAIN] MISSION [Chennai]: Feasible=True
+2026-06-21 11:19:47,199  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=45.1° | PeakSNR=27.4dB | Margin=17.4dB | Quality=EXCELLENT
+2026-06-21 11:19:47,199  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=45.1° | PeakSNR=27.4dB | Margin=17.4dB | Qual
+2026-06-21 11:19:47,589  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:19:47,589  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:20:17,596  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:20:17,598  INFO      main                         MISSION CYCLE 0009  |  2026-06-21T05:50:17.598624+00:00
+2026-06-21 11:20:17,598  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:20:17,601  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:20:17,605  INFO      ndvi_analysis              [NDVI] Mean=0.060 | MinNDVI=-0.125 | Risk=Critical | DroughtIdx=0.700
+2026-06-21 11:20:17,606  INFO      main                       [MAIN] NDVI: NDVI=+0.060 | Drought=70% | Risk: Critical | Fires visible: 0
+2026-06-21 11:20:17,607  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:20:17,608  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:20:17,608  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:20:17,610  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:20:17,610  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:20:17,613  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Amazon Basin | Feasible=True | Confidence=HIGH | NextPass≈21min
+2026-06-21 11:20:17,614  INFO      main                       [MAIN] MISSION [Amazon Basin]: Feasible=True
+2026-06-21 11:20:17,618  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=17.2° | PeakSNR=21.7dB | Margin=11.7dB | Quality=GOOD
+2026-06-21 11:20:17,619  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=17.2° | PeakSNR=21.7dB | Margin=11.7dB | Qual
+2026-06-21 11:20:18,118  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:20:18,118  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:20:48,122  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:20:48,124  INFO      main                         MISSION CYCLE 0010  |  2026-06-21T05:50:48.124876+00:00
+2026-06-21 11:20:48,124  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:20:48,128  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:20:48,130  INFO      ndvi_analysis              [NDVI] Mean=0.086 | MinNDVI=-0.095 | Risk=Critical | DroughtIdx=0.678
+2026-06-21 11:20:48,131  INFO      main                       [MAIN] NDVI: NDVI=+0.086 | Drought=68% | Risk: Critical | Fires visible: 0
+2026-06-21 11:20:48,131  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:20:48,133  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:20:48,134  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:20:48,134  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:20:48,135  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:20:48,135  INFO      agents.mission_agent       [MissionPlanningAgent] Target=California NF | Feasible=True | Confidence=HIGH | NextPass≈41min
+2026-06-21 11:20:48,135  INFO      main                       [MAIN] MISSION [California NF]: Feasible=True
+2026-06-21 11:20:48,135  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=43.6° | PeakSNR=26.9dB | Margin=16.9dB | Quality=EXCELLENT
+2026-06-21 11:20:48,138  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=43.6° | PeakSNR=26.9dB | Margin=16.9dB | Qual
+2026-06-21 11:20:48,498  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:20:48,507  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:21:18,507  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:21:18,509  INFO      main                         MISSION CYCLE 0011  |  2026-06-21T05:51:18.509696+00:00
+2026-06-21 11:21:18,511  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:21:18,520  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:21:18,524  INFO      ndvi_analysis              [NDVI] Mean=0.114 | MinNDVI=-0.055 | Risk=High | DroughtIdx=0.655
+2026-06-21 11:21:18,526  INFO      main                       [MAIN] NDVI: NDVI=+0.114 | Drought=66% | Risk: High | Fires visible: 0
+2026-06-21 11:21:18,531  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:21:18,533  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:21:18,536  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:21:18,537  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:21:18,539  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:21:18,541  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Siberian Taiga | Feasible=True | Confidence=HIGH | NextPass≈34min
+2026-06-21 11:21:18,542  INFO      main                       [MAIN] MISSION [Siberian Taiga]: Feasible=True
+2026-06-21 11:21:18,544  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=50.4° | PeakSNR=27.4dB | Margin=17.4dB | Quality=EXCELLENT
+2026-06-21 11:21:18,545  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=50.4° | PeakSNR=27.4dB | Margin=17.4dB | Qual
+2026-06-21 11:21:20,958  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:21:20,959  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:21:50,960  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:21:50,964  INFO      main                         MISSION CYCLE 0012  |  2026-06-21T05:51:50.964129+00:00
+2026-06-21 11:21:50,969  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:21:50,985  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:21:50,992  INFO      ndvi_analysis              [NDVI] Mean=0.141 | MinNDVI=-0.045 | Risk=High | DroughtIdx=0.632
+2026-06-21 11:21:50,994  INFO      main                       [MAIN] NDVI: NDVI=+0.141 | Drought=63% | Risk: High | Fires visible: 0
+2026-06-21 11:21:50,997  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:21:50,999  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:21:51,003  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:21:51,005  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:21:51,005  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:21:51,005  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Chennai | Feasible=True | Confidence=HIGH | NextPass≈21min
+2026-06-21 11:21:51,005  INFO      main                       [MAIN] MISSION [Chennai]: Feasible=True
+2026-06-21 11:21:51,014  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=41.2° | PeakSNR=27.0dB | Margin=17.0dB | Quality=EXCELLENT
+2026-06-21 11:21:51,019  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=41.2° | PeakSNR=27.0dB | Margin=17.0dB | Qual
+2026-06-21 11:21:53,339  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:21:53,344  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:22:23,346  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:22:23,348  INFO      main                         MISSION CYCLE 0013  |  2026-06-21T05:52:23.348814+00:00
+2026-06-21 11:22:23,351  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:22:23,355  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:22:23,362  INFO      ndvi_analysis              [NDVI] Mean=0.168 | MinNDVI=-0.024 | Risk=High | DroughtIdx=0.610
+2026-06-21 11:22:23,362  INFO      main                       [MAIN] NDVI: NDVI=+0.168 | Drought=61% | Risk: High | Fires visible: 0
+2026-06-21 11:22:23,370  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:22:23,370  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:22:23,370  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:22:23,370  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:22:23,375  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:22:23,376  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Amazon Basin | Feasible=True | Confidence=HIGH | NextPass≈20min
+2026-06-21 11:22:23,376  INFO      main                       [MAIN] MISSION [Amazon Basin]: Feasible=True
+2026-06-21 11:22:23,379  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=36.0° | PeakSNR=25.1dB | Margin=15.1dB | Quality=EXCELLENT
+2026-06-21 11:22:23,382  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=36.0° | PeakSNR=25.1dB | Margin=15.1dB | Qual
+2026-06-21 11:22:25,783  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:22:25,785  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:22:55,787  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:22:55,789  INFO      main                         MISSION CYCLE 0014  |  2026-06-21T05:52:55.787088+00:00
+2026-06-21 11:22:55,789  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:22:55,795  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:22:55,797  INFO      ndvi_analysis              [NDVI] Mean=0.195 | MinNDVI=0.022 | Risk=High | DroughtIdx=0.587
+2026-06-21 11:22:55,799  INFO      main                       [MAIN] NDVI: NDVI=+0.195 | Drought=59% | Risk: High | Fires visible: 0
+2026-06-21 11:22:55,801  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:22:55,801  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:22:55,803  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:22:55,803  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:22:55,803  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=True | Primary=ECLIPSE_NOMINAL
+2026-06-21 11:22:55,803  WARNING   main                       [MAIN] FAULT: ECLIPSE_NOMINAL — Satellite in eclipse — solar current expected near zero.
+2026-06-21 11:22:55,803  INFO      agents.mission_agent       [MissionPlanningAgent] Target=California NF | Feasible=True | Confidence=HIGH | NextPass≈40min
+2026-06-21 11:22:55,807  INFO      main                       [MAIN] MISSION [California NF]: Feasible=True
+2026-06-21 11:22:55,809  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=46.4° | PeakSNR=27.1dB | Margin=17.1dB | Quality=EXCELLENT
+2026-06-21 11:22:55,809  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=46.4° | PeakSNR=27.1dB | Margin=17.1dB | Qual
+2026-06-21 11:22:56,207  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:22:56,207  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:23:26,209  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:23:26,209  INFO      main                         MISSION CYCLE 0015  |  2026-06-21T05:53:26.209016+00:00
+2026-06-21 11:23:26,211  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:23:26,217  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:23:26,221  INFO      ndvi_analysis              [NDVI] Mean=0.222 | MinNDVI=0.008 | Risk=High | DroughtIdx=0.565
+2026-06-21 11:23:26,221  INFO      main                       [MAIN] NDVI: NDVI=+0.222 | Drought=56% | Risk: High | Fires visible: 0
+2026-06-21 11:23:26,229  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:23:26,229  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:23:26,232  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:23:26,232  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:23:26,238  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=True | Primary=ECLIPSE_NOMINAL
+2026-06-21 11:23:26,239  WARNING   main                       [MAIN] FAULT: ECLIPSE_NOMINAL — Satellite in eclipse — solar current expected near zero.
+2026-06-21 11:23:26,242  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Siberian Taiga | Feasible=True | Confidence=HIGH | NextPass≈32min
+2026-06-21 11:23:26,242  INFO      main                       [MAIN] MISSION [Siberian Taiga]: Feasible=True
+2026-06-21 11:23:26,245  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=40.8° | PeakSNR=26.7dB | Margin=16.7dB | Quality=EXCELLENT
+2026-06-21 11:23:26,246  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=40.8° | PeakSNR=26.7dB | Margin=16.7dB | Qual
+2026-06-21 11:23:26,763  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:23:26,763  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:23:56,769  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:23:56,769  INFO      main                         MISSION CYCLE 0016  |  2026-06-21T05:53:56.769557+00:00
+2026-06-21 11:23:56,769  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:23:56,775  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:23:56,779  INFO      ndvi_analysis              [NDVI] Mean=0.246 | MinNDVI=0.088 | Risk=High | DroughtIdx=0.545
+2026-06-21 11:23:56,781  INFO      main                       [MAIN] NDVI: NDVI=+0.246 | Drought=55% | Risk: High | Fires visible: 0
+2026-06-21 11:23:56,781  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:23:56,781  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:23:56,785  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:23:56,785  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:23:56,785  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:23:56,785  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Chennai | Feasible=True | Confidence=HIGH | NextPass≈20min
+2026-06-21 11:23:56,785  INFO      main                       [MAIN] MISSION [Chennai]: Feasible=True
+2026-06-21 11:23:56,789  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=57.9° | PeakSNR=28.5dB | Margin=18.5dB | Quality=EXCELLENT
+2026-06-21 11:23:56,789  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=57.9° | PeakSNR=28.5dB | Margin=18.5dB | Qual
+2026-06-21 11:23:57,419  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:23:57,419  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:24:27,423  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:24:27,425  INFO      main                         MISSION CYCLE 0017  |  2026-06-21T05:54:27.425876+00:00
+2026-06-21 11:24:27,427  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:24:27,435  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:24:27,437  INFO      ndvi_analysis              [NDVI] Mean=0.270 | MinNDVI=0.106 | Risk=Moderate | DroughtIdx=0.525
+2026-06-21 11:24:27,438  INFO      main                       [MAIN] NDVI: NDVI=+0.271 | Drought=52% | Risk: Moderate | Fires visible: 0
+2026-06-21 11:24:27,438  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:24:27,438  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:24:27,443  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:24:27,443  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:24:27,443  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:24:27,443  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Amazon Basin | Feasible=True | Confidence=HIGH | NextPass≈20min
+2026-06-21 11:24:27,443  INFO      main                       [MAIN] MISSION [Amazon Basin]: Feasible=True
+2026-06-21 11:24:27,449  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=63.0° | PeakSNR=28.3dB | Margin=18.3dB | Quality=EXCELLENT
+2026-06-21 11:24:27,449  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=63.0° | PeakSNR=28.3dB | Margin=18.3dB | Qual
+2026-06-21 11:24:27,875  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:24:27,875  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:24:57,879  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:24:57,881  INFO      main                         MISSION CYCLE 0018  |  2026-06-21T05:54:57.881409+00:00
+2026-06-21 11:24:57,883  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:24:57,886  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:24:57,894  INFO      ndvi_analysis              [NDVI] Mean=0.294 | MinNDVI=0.140 | Risk=Moderate | DroughtIdx=0.505
+2026-06-21 11:24:57,894  INFO      main                       [MAIN] NDVI: NDVI=+0.294 | Drought=50% | Risk: Moderate | Fires visible: 0
+2026-06-21 11:24:57,894  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:24:57,894  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:24:57,894  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:24:57,898  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:24:57,899  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=True | Primary=ECLIPSE_NOMINAL
+2026-06-21 11:24:57,899  WARNING   main                       [MAIN] FAULT: ECLIPSE_NOMINAL — Satellite in eclipse — solar current expected near zero.
+2026-06-21 11:24:57,899  INFO      agents.mission_agent       [MissionPlanningAgent] Target=California NF | Feasible=True | Confidence=HIGH | NextPass≈39min
+2026-06-21 11:24:57,899  INFO      main                       [MAIN] MISSION [California NF]: Feasible=True
+2026-06-21 11:24:57,901  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=25.6° | PeakSNR=23.8dB | Margin=13.8dB | Quality=GOOD
+2026-06-21 11:24:57,903  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=25.6° | PeakSNR=23.8dB | Margin=13.8dB | Qual
+2026-06-21 11:24:58,532  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:24:58,532  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:25:28,532  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:25:28,535  INFO      main                         MISSION CYCLE 0019  |  2026-06-21T05:55:28.535780+00:00
+2026-06-21 11:25:28,537  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:25:28,549  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:25:28,554  INFO      ndvi_analysis              [NDVI] Mean=0.317 | MinNDVI=0.139 | Risk=Moderate | DroughtIdx=0.486
+2026-06-21 11:25:28,556  INFO      main                       [MAIN] NDVI: NDVI=+0.317 | Drought=49% | Risk: Moderate | Fires visible: 0
+2026-06-21 11:25:28,558  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:25:28,561  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:25:28,562  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:25:28,564  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:25:28,564  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:25:28,569  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Siberian Taiga | Feasible=True | Confidence=HIGH | NextPass≈31min
+2026-06-21 11:25:28,569  INFO      main                       [MAIN] MISSION [Siberian Taiga]: Feasible=True
+2026-06-21 11:25:28,569  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=43.0° | PeakSNR=26.6dB | Margin=16.6dB | Quality=EXCELLENT
+2026-06-21 11:25:28,569  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=43.0° | PeakSNR=26.6dB | Margin=16.6dB | Qual
+2026-06-21 11:25:30,962  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:25:30,968  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:26:00,982  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:26:00,983  INFO      main                         MISSION CYCLE 0020  |  2026-06-21T05:56:00.983947+00:00
+2026-06-21 11:26:00,983  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:26:00,986  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:26:00,990  INFO      ndvi_analysis              [NDVI] Mean=0.340 | MinNDVI=0.163 | Risk=Moderate | DroughtIdx=0.467
+2026-06-21 11:26:00,990  INFO      main                       [MAIN] NDVI: NDVI=+0.340 | Drought=47% | Risk: Moderate | Fires visible: 0
+2026-06-21 11:26:00,990  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:26:00,990  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:26:00,990  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:26:00,990  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:26:00,990  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=True | Primary=ECLIPSE_NOMINAL
+2026-06-21 11:26:00,990  WARNING   main                       [MAIN] FAULT: ECLIPSE_NOMINAL — Satellite in eclipse — solar current expected near zero.
+2026-06-21 11:26:00,990  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Chennai | Feasible=True | Confidence=HIGH | NextPass≈19min
+2026-06-21 11:26:00,995  INFO      main                       [MAIN] MISSION [Chennai]: Feasible=True
+2026-06-21 11:26:00,998  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=51.8° | PeakSNR=28.1dB | Margin=18.1dB | Quality=EXCELLENT
+2026-06-21 11:26:00,999  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=51.8° | PeakSNR=28.1dB | Margin=18.1dB | Qual
+2026-06-21 11:26:01,624  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:26:01,625  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:26:31,627  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:26:31,627  INFO      main                         MISSION CYCLE 0021  |  2026-06-21T05:56:31.627025+00:00
+2026-06-21 11:26:31,627  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:26:31,631  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:26:31,634  INFO      ndvi_analysis              [NDVI] Mean=0.361 | MinNDVI=0.169 | Risk=Moderate | DroughtIdx=0.450
+2026-06-21 11:26:31,634  INFO      main                       [MAIN] NDVI: NDVI=+0.360 | Drought=45% | Risk: Moderate | Fires visible: 0
+2026-06-21 11:26:31,635  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:26:31,635  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:26:31,635  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:26:31,635  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:26:31,635  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:26:31,635  INFO      agents.mission_agent       [MissionPlanningAgent] Target=Amazon Basin | Feasible=True | Confidence=HIGH | NextPass≈19min
+2026-06-21 11:26:31,635  INFO      main                       [MAIN] MISSION [Amazon Basin]: Feasible=True
+2026-06-21 11:26:31,635  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=18.3° | PeakSNR=21.5dB | Margin=11.5dB | Quality=GOOD
+2026-06-21 11:26:31,635  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=18.3° | PeakSNR=21.5dB | Margin=11.5dB | Qual
+2026-06-21 11:26:32,041  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:26:32,041  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+
+2026-06-21 11:27:02,043  INFO      main                       
+────────────────────────────────────────────────────────────
+2026-06-21 11:27:02,043  INFO      main                         MISSION CYCLE 0022  |  2026-06-21T05:57:02.043051+00:00
+2026-06-21 11:27:02,043  INFO      main                       ────────────────────────────────────────────────────────────
+2026-06-21 11:27:02,060  INFO      orbit_engine               [ORBIT] FOV contains 0 / 120 fires.
+2026-06-21 11:27:02,060  INFO      ndvi_analysis              [NDVI] Mean=0.380 | MinNDVI=0.175 | Risk=Moderate | DroughtIdx=0.433
+2026-06-21 11:27:02,060  INFO      main                       [MAIN] NDVI: NDVI=+0.380 | Drought=43% | Risk: Moderate | Fires visible: 0
+2026-06-21 11:27:02,070  INFO      main                       [MAIN] BURN: 0 fires | 0.0 ha burned | Severity: None | CO₂≈0t | Recovery: 0.0yr
+2026-06-21 11:27:02,070  INFO      oracle_trigger             [ORACLE] No qualifying fires — threshold not exceeded.
+2026-06-21 11:27:02,074  INFO      agents.health_agent        [HealthMonitoringAgent] Health=NOMINAL | Anomalies=0
+2026-06-21 11:27:02,075  INFO      main                       [MAIN] HEALTH: NOMINAL | ✅ Battery healthy. Thermal conditions nominal. |    All subsystems within operat
+2026-06-21 11:27:02,075  INFO      agents.fault_agent         [FaultDiagnosisAgent] FaultDetected=False | Primary=ALL_NOMINAL
+2026-06-21 11:27:02,075  INFO      agents.mission_agent       [MissionPlanningAgent] Target=California NF | Feasible=True | Confidence=HIGH | NextPass≈38min
+2026-06-21 11:27:02,081  INFO      main                       [MAIN] MISSION [California NF]: Feasible=True
+2026-06-21 11:27:02,081  INFO      agents.ground_station_agent  [GroundStationAgent] [CUBESAT-GS-BANGALORE] Pass: MaxEl=11.3° | PeakSNR=19.9dB | Margin=9.9dB | Quality=GOOD
+2026-06-21 11:27:02,084  INFO      main                       [MAIN] GS: [CUBESAT-GS-BANGALORE] Pass: MaxEl=11.3° | PeakSNR=19.9dB | Margin=9.9dB | Quali
+2026-06-21 11:27:04,564  INFO      main                       [MAIN] State saved → outputs\state.json
+2026-06-21 11:27:04,564  INFO      main                       [MAIN] Sleeping 30s until next cycle …
+

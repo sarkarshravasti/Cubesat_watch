@@ -1,0 +1,217 @@
+{
+  "cycle": 22,
+  "timestamp": "2026-06-21T05:57:04.554832+00:00",
+  "orbit": {
+    "lat_deg": -26.637,
+    "lon_deg": 18.217,
+    "alt_km": 519.61,
+    "velocity_kms": 7.602,
+    "period_min": 94.87,
+    "inclination_deg": 97.4,
+    "timestamp_utc": "2026-06-21T05:57:02.054938+00:00"
+  },
+  "fov": {
+    "lat_min": -27.4679,
+    "lat_max": -24.9751,
+    "lon_min": 17.2874,
+    "lon_max": 19.1466,
+    "width_km": 185.0,
+    "height_km": 185.0,
+    "center_lat": -26.637,
+    "center_lon": 18.217
+  },
+  "gsd_m": 89587.93,
+  "firms_total": 120,
+  "fires_in_fov": 0,
+  "ndvi": {
+    "lat_axis": "[-27.4679     -27.42833175 -27.38876349 -27.34919524 -27.30962698\n -27.27005873 -27.23049048 -27.19092222 -27.15135397 -27.11178571\n -27.07221746 -27.03264921 -26.99308095 -26.9535127  -26.91394444\n -26.87437619 -26.83480794 -26.79523968 -26.75567143 -26.71610317\n -26.67653492 -26.63696667 -26.59739841 -26.55783016 -26.5182619\n -26.47869365 -26.4391254  -26.39955714 -26.35998889 -26.32042063\n -26.28085238 -26.24128413 -26.20171587 -26.16214762 -26.12257937\n -26.08301111 -26.04344286 -26.0038746  -25.96430635 -25.9247381\n -25.88516984 -25.84560159 -25.80603333 -25.76646508 -25.72689683\n -25.68732857 -25.64776032 -25.60819206 -25.56862381 -25.52905556\n -25.4894873  -25.44991905 -25.41035079 -25.37078254 -25.33121429\n -25.29164603 -25.25207778 -25.21250952 -25.17294127 -25.13337302\n -25.09380476 -25.05423651 -25.01466825 -24.9751    ]",
+    "lon_axis": "[17.2874     17.31691111 17.34642222 17.37593333 17.40544444 17.43495556\n 17.46446667 17.49397778 17.52348889 17.553      17.58251111 17.61202222\n 17.64153333 17.67104444 17.70055556 17.73006667 17.75957778 17.78908889\n 17.8186     17.84811111 17.87762222 17.90713333 17.93664444 17.96615556\n 17.99566667 18.02517778 18.05468889 18.0842     18.11371111 18.14322222\n 18.17273333 18.20224444 18.23175556 18.26126667 18.29077778 18.32028889\n 18.3498     18.37931111 18.40882222 18.43833333 18.46784444 18.49735556\n 18.52686667 18.55637778 18.58588889 18.6154     18.64491111 18.67442222\n 18.70393333 18.73344444 18.76295556 18.79246667 18.82197778 18.85148889\n 18.881      18.91051111 18.94002222 18.96953333 18.99904444 19.02855556\n 19.05806667 19.08757778 19.11708889 19.1466    ]",
+    "mean_ndvi": 0.38,
+    "min_ndvi": 0.175,
+    "risk_class": "Moderate",
+    "drought_index": 0.4333,
+    "fire_count": 0,
+    "timestamp": "2026-06-21T05:57:02.060453+00:00"
+  },
+  "burn": {
+    "total_hectares": 0.0,
+    "severity_breakdown": {
+      "Low": 0,
+      "Moderate": 0,
+      "High": 0,
+      "Extreme": 0
+    },
+    "fires_processed": 0,
+    "avg_brightness_K": 0.0,
+    "peak_brightness_K": 0.0,
+    "dominant_severity": "None",
+    "recovery_years": 0.0,
+    "co2_est_tonnes": 0.0,
+    "gsd_m": 0.0,
+    "pixel_area_m2": 0.0,
+    "timestamp": "2026-06-21T05:57:02.070853+00:00"
+  },
+  "oracle_latest": null,
+  "oracle_history": [],
+  "health": {
+    "overall": "NOMINAL",
+    "subsystems": [
+      {
+        "name": "battery_v",
+        "value": 7.915,
+        "unit": "V",
+        "status": "NOMINAL",
+        "message": "Within limits (6.8\u20138.5V)"
+      },
+      {
+        "name": "solar_A",
+        "value": 2.501,
+        "unit": "A",
+        "status": "NOMINAL",
+        "message": "Within limits (0.0\u20134.0A)"
+      },
+      {
+        "name": "temp_C",
+        "value": 17.8,
+        "unit": "\u00b0C",
+        "status": "NOMINAL",
+        "message": "Within limits (-20\u201365\u00b0C)"
+      },
+      {
+        "name": "power_W",
+        "value": 5.87,
+        "unit": "W",
+        "status": "NOMINAL",
+        "message": "Within limits (0.5\u201315.0W)"
+      },
+      {
+        "name": "gyro_dps",
+        "value": 0.099,
+        "unit": "\u00b0/s",
+        "status": "NOMINAL",
+        "message": "Within limits (0.0\u20133.0\u00b0/s)"
+      },
+      {
+        "name": "mag_uT",
+        "value": 37.6,
+        "unit": "\u03bcT",
+        "status": "NOMINAL",
+        "message": "Within limits (20\u201365\u03bcT)"
+      }
+    ],
+    "anomalies": [],
+    "summary": "\u2705 Battery healthy. Thermal conditions nominal. |    All subsystems within operating limits.",
+    "telemetry": {
+      "battery_v": 7.915,
+      "solar_A": 2.501,
+      "temp_C": 17.8,
+      "power_W": 5.87,
+      "gyro_dps": 0.099,
+      "mag_uT": 37.6,
+      "is_eclipse": false,
+      "has_fault": false
+    },
+    "timestamp": "2026-06-21T05:57:02.074405+00:00"
+  },
+  "fault": {
+    "fault_detected": false,
+    "primary_hypothesis": {
+      "code": "ALL_NOMINAL",
+      "description": "No anomalies detected across all monitored subsystems.",
+      "confidence": "HIGH",
+      "evidence": [
+        "All parameters within nominal bounds"
+      ],
+      "action": "Continue nominal operations."
+    },
+    "all_hypotheses": [
+      {
+        "code": "ALL_NOMINAL",
+        "description": "No anomalies detected across all monitored subsystems.",
+        "confidence": "HIGH",
+        "evidence": [
+          "All parameters within nominal bounds"
+        ],
+        "action": "Continue nominal operations."
+      }
+    ],
+    "reasoning_chain": [
+      "Telemetry received: batt=7.915V | solar=2.501A | temp=17.8\u00b0C | gyro=0.099\u00b0/s",
+      "Rule base evaluated: 1 hypothesis/es generated.",
+      "Primary: [ALL_NOMINAL] \u2014 No anomalies detected across all monitored subsystems.",
+      "Confidence: HIGH | Evidence: All parameters within nominal bounds",
+      "Recommended action: Continue nominal operations."
+    ],
+    "timestamp": "2026-06-21T05:57:02.075928+00:00"
+  },
+  "mission_plan": {
+    "target_lat": 38.5,
+    "target_lon": -120.8,
+    "target_name": "California NF",
+    "feasible": true,
+    "confidence": "HIGH",
+    "recommendation": "\u2705 Imaging over California NF is FEASIBLE. Next pass in \u224838 min [06:35 UTC]. Power available: 27.9Wh. Memory free: 11.86GB. Recommend scheduling at next pass window.",
+    "constraints": [],
+    "next_pass_utc": "2026-06-21T06:35:08.844398+00:00",
+    "power_available_wh": 27.87,
+    "memory_free_gb": 11.864,
+    "timestamp": "2026-06-21T05:57:02.075928+00:00"
+  },
+  "ground_station": {
+    "pass_summary": "[CUBESAT-GS-BANGALORE] Pass: MaxEl=11.3\u00b0 | PeakSNR=19.9dB | Margin=9.9dB | Quality=GOOD",
+    "link_budget": {
+      "AOS": {
+        "elevation_deg": 3.0,
+        "slant_range_km": 2390.9,
+        "fspl_db": 152.83,
+        "doppler_khz": 0.0,
+        "rx_snr_db": 17.14,
+        "noise_floor_dbm": -134.15,
+        "link_margin_db": 7.14,
+        "expected_ber": 9.469e-05,
+        "packet_loss_pct": 0.095,
+        "quality": "GOOD",
+        "explanation": "Elevation 3.0\u00b0 \u2192 Slant 2391km | FSPL=152.8dB | SNR=17.1dB | Margin=7.1dB | Doppler=+0.0kHz | \u26a0\ufe0f Low elevation \u2014 high atmospheric path, marginal geometry.",
+        "timestamp": "2026-06-21T05:57:02.081567+00:00"
+      },
+      "MidPass": {
+        "elevation_deg": 11.3,
+        "slant_range_km": 1732.8,
+        "fspl_db": 150.04,
+        "doppler_khz": 1.083,
+        "rx_snr_db": 19.93,
+        "noise_floor_dbm": -134.15,
+        "link_margin_db": 9.93,
+        "expected_ber": 2.347e-05,
+        "packet_loss_pct": 0.023,
+        "quality": "GOOD",
+        "explanation": "Elevation 11.3\u00b0 \u2192 Slant 1733km | FSPL=150.0dB | SNR=19.9dB | Margin=9.9dB | Doppler=+1.1kHz",
+        "timestamp": "2026-06-21T05:57:02.081567+00:00"
+      },
+      "LOS": {
+        "elevation_deg": 5.0,
+        "slant_range_km": 2205.0,
+        "fspl_db": 152.13,
+        "doppler_khz": 0.967,
+        "rx_snr_db": 17.84,
+        "noise_floor_dbm": -134.15,
+        "link_margin_db": 7.84,
+        "expected_ber": 6.673e-05,
+        "packet_loss_pct": 0.067,
+        "quality": "GOOD",
+        "explanation": "Elevation 5.0\u00b0 \u2192 Slant 2205km | FSPL=152.1dB | SNR=17.8dB | Margin=7.8dB | Doppler=+1.0kHz | \u26a0\ufe0f Low elevation \u2014 high atmospheric path, marginal geometry.",
+        "timestamp": "2026-06-21T05:57:02.081567+00:00"
+      }
+    },
+    "anomaly_found": true,
+    "cause_analysis": [
+      "\ud83d\udcd0 Low maximum elevation (11.3\u00b0) means rapid Doppler change and extended atmospheric path at horizon \u2014 poor pass geometry."
+    ],
+    "recommendations": [
+      "Reposition ground station for clear south horizon view."
+    ],
+    "timestamp": "2026-06-21T05:57:02.081567+00:00"
+  },
+  "thermal_map": "thermal_map.png",
+  "ndvi_map": "ndvi_map.png"
+}
